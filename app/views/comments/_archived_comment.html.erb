@@ -1,0 +1,13 @@
+<div class="comment" id="comment_<%=comment.id%>">
+  <%= comment.text %>
+  <div class="restore-comment">
+    <%= button_to(comment_destroy_path(comment),class:'btn no-padding', method: :get, remote: true, data: { confirm: 'Are you sure to restore this comment permanently?' }) do %>
+      <i class="fa fa-check" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <div class="delete-comment">
+    <%= button_to(comment_path(comment),class:'btn no-padding', method: :delete, remote: true, data: { confirm: 'Are you sure to remove this comment permanently?' }) do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="comment" id="comment_<%=comment.id%>">
+  <%= comment.text %>
+  <div class="delete-comment">
+    <%= button_to(comment_path(comment),class:'btn', method: :delete, remote: true, data: { confirm: 'Are you sure to remove this comment?' }) do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+#add-post a{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#users-posts {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.post-image img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.posts {
+  margin: 15px;
+}
+
+form.button_to {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.comment {
+  padding: 15px;
+  margin: 15px;
+  background: white;
+}

@@ -1,0 +1,27 @@
+.delete-comment {
+  position: absolute;
+  right: -35px;
+  top: 8px;
+}
+
+.restore-comment {
+  position: absolute;
+  right: -20px;
+  top: 8px;
+}
+
+.comment {
+  position: relative;
+}
+
+.delete-comment .fa-times {
+  color: red;
+}
+
+.restore-comment .fa-check {
+  color: green;
+}
+
+.no-padding {
+  padding: 0px !important;
+}

@@ -1,0 +1,2 @@
+$('#modal-window').modal('hide');
+$('#users-posts').prepend("<%= escape_javascript( render partial: 'post', locals: {post: @post} ) %>");

@@ -1,0 +1,26 @@
+<div class="row posts" id="post_<%=post.id%>">
+  <div class="offset-md-3 col-md-6">
+    <div class="card card-info">
+      <div class="card-heading">
+        <span class="close">
+          <a href="<%= post_restore_path(post) %>" data-remote='true'>
+            <i class="fa fa-check"></i>
+          </a>
+          <%= button_to(post_destroy_path(post),class:'btn btn-danger delete-button', method: :delete, remote: true, data: { confirm: 'Are you sure to remove this post permanently?' }) do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+        </span>
+      </div>
+      <div class="card-body">
+        <div class="post-image">
+          <%= post.caption %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div id="post-<%=post.id %>-comments">
+          <%= render( partial: 'comments/archived_comment', collection: post.comments.only_deleted, as: :comment) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

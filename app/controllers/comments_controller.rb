@@ -13,11 +13,17 @@ class CommentsController < ApplicationController
   def permanent_destroy
     @comment = Comment.find(params[:comment_id])
     @comment.destroy(true)
+    respond_to do |format|
+      format.js { render :action => "destroy" }
+    end
   end
 
   def restore
     @comment = Comment.only_deleted.find(params[:comment_id])
     @comment.restore
+    respond_to do |format|
+      format.js { render :action => "destroy" }
+    end
   end
 
   private

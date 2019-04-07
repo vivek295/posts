@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    respond_to do |format|
+      format.js
+    end
   end
 
   def permanent_destroy
@@ -28,6 +31,9 @@ class PostsController < ApplicationController
       comment.destroy(true)
     end
     @post.destroy(true)
+    respond_to do |format|
+      format.js { render :action => "destroy" }
+    end
   end
 
   def index
@@ -44,6 +50,9 @@ class PostsController < ApplicationController
       comment.restore
     end
     @post.restore
+    respond_to do |format|
+      format.js { render :action => "destroy" }
+    end
   end
 
   private
